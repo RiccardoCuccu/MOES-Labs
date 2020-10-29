@@ -20,6 +20,9 @@
 *.mod
 *.smod
 
+# Pascal module files
+*.P
+
 # Compiled Static libraries
 *.lai
 *.la
@@ -30,3 +33,4 @@
 *.exe
 *.out
 *.app
+*.x
