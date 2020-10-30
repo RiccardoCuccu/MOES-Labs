@@ -2,6 +2,8 @@
 Laboratory 1 of the Modeling and Optimization of Embedded Systems course of the master degree in Embedded System (Electronic Engineering) of Politecnico di Torino, academic year 2020/2021.<br/>
 Tested with SystemC v2.3.3.
 
+In case of problems try to source the .bashrc file with the command `. ~/.bashrc`.
+
 ## Exercise 1 - HelloWorld
 A SystemC module is a C++ class, it encapsulates a hardware or software description.
 SystemC defines that any module has to be derived from the existing class `sc_module`, and supplies a macro `SC_MODULE` to simplify the declaration process.
