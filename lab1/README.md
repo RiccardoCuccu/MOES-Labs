@@ -86,9 +86,9 @@ Read and compile the source code, and run the obtained executable.
 Modify the module you have designed in the *Exercise_2*, to simulate a counter that starts to countdown from 20 to 1 with a countdown interval of 20ns.
 
 ### Tip
-– To compile the code, open a terminal and change to the directory where the source file located. Then type `make` in the terminal.
-– After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
-– If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
+- To compile the code, open a terminal and change to the directory where the source file located. Then type `make` in the terminal.
+- After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
+- If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
 
 ## Exercise 4 - sc_event
 A SystemC event is the occurrence of an `sc_event` notification and happens at a single instant in time, which is used for synchronization.
@@ -110,16 +110,16 @@ Read and compile the source code, and run the obtained executable.
 - `wait(event_name)`                  // waiting for event inside SC_THREAD
 
 ### Tip 3
-– To compile the code, open a termi nal and change to the directory where the source file located. Then type `make` in the terminal.
-– After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the
-– If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
+- To compile the code, open a termi nal and change to the directory where the source file located. Then type `make` in the terminal.
+- After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the
+- If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
 
 ## Exercise 5 - TicToc
 
 Using the knowledge that you gained in the previous exercises, try to implement a SystemC simulation to simulate a "network" composed of two nodes (which are represented by simulation processes).
 The nodes will perform something simple: one of the two nodes will wake up firstly from sleeping and keep awake for 10ns; afterwards, it invokes another node and goes to sleep again until being woken up by that waking node; and the two nodes will keep performing this procedure in turn.
 That is to say, the two nodes alternatively keep awake for a while and wake up the sleeping node before going to sleep.
-The node starts the communication is denoted as "tic" and the other is "toc", which are depicted in the Figure 1 bellow.
+The node starts the communication is denoted as "tic" and the other is "toc", which are depicted in the figure bellow.
 
 <p align="center">
   <img src="./fig/tic_toc.png" width="50%">
