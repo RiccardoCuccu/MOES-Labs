@@ -122,7 +122,7 @@ That is to say, the two nodes alternatively keep awake for a while and wake up t
 The node starts the communication is denoted as "tic" and the other is "toc", which are depicted in the figure bellow.
 
 <p align="center">
-  <img src="./fig/tic_toc.png" width="50%">
+  <img src="./fig/tic_toc.png" width="25%">
 </p>
 
 After the simulation, display on the terminal how many times each node has been awake (active) during the simulation.
