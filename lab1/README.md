@@ -79,7 +79,7 @@ The reaction time and signal propagation time in the real world are modeled by t
 The `wait()` method provides a syntax to allow this delay in `SC_THREAD()` process.
 When a `wait()` is invoked, the `SC_THREAD` process blocks i tself and is resumed by the scheduler after the requested delay in simulated time.
 
-***Note that simulation time is very different from wall clock time!***.
+***Note that simulation time is very different from wall clock time!***
 I.e. a call of `wait(60, SC_ SEC)` does not return control after 60 seconds of real, physical time.
 It returns control when **simulated time** is 60 seconds after the time when it was called.
 
