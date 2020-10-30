@@ -80,7 +80,7 @@ The `wait()` method provides a syntax to allow this delay in `SC_THREAD()` proce
 When a `wait()` is invoked, the `SC_THREAD` process blocks i tself and is resumed by the scheduler after the requested delay in simulated time.
 
 ***Note that simulation time is very different from wall clock time!***<br/>
-I.e. a call of `wait(60, SC_ SEC)` does not return control after 60 seconds of real, physical time.
+I.e. a call of `wait(60, SC_SEC)` does not return control after 60 seconds of real, physical time.
 It returns control when **simulated time** is 60 seconds after the time when it was called.
 
 A routine to exemplify the usage of `sc_time()` and `wait()` is given in *Exercise_3*.
@@ -99,7 +99,7 @@ A process instance may be triggered or resumed on the occurrence of an event, th
 To observe an event, the observer must be waiting for the event prior to its notification.
 Any number of observers can wait for an event, and all of them will be notified **in the same delta cycle**.
 
-A routine to illustrate the usage of `sc_event` and `wait(event_ name)` is given in *Exercise_4*.
+A routine to illustrate the usage of `sc_event` and `wait(event_name)` is given in *Exercise_4*.
 Read and compile the source code, and run the obtained executable.
 
 ### Tip 1
