@@ -16,7 +16,7 @@ To compile the code, open a terminal and change to the directory where the sourc
 After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
 If you want to delete all created files (including the executable itself),
 - for C++ version, type `rm run.x` in the terminal.
-- for SystemC version, ty pe `make clean` in the terminal.
+- for SystemC version, type `make clean` in the terminal.
 
 ## Exercise 2 - Modules
 All programs need a starting point.
@@ -45,16 +45,86 @@ Simulation completes when **the first** of three events occurs:
 During this stage (not used in the labs) waveform files are closed, errors detected by monitors are checked and reported, and so on.
 
 ### Tip 2
-- To compile the code, open a terminal and change to the directory where the source file located.
-Then type `make` in the terminal.
+- To compile the code, open a terminal and change to the directory where the source file located. Then type `make` in the terminal.
 - After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
 - If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
 
 ## Exercise 3 - sc_time
+The data type `sc_time` is used by the simulation kernel to track simulated time and to specify delays and timeouts.
+SystemC uses a 64 bit unsigned integer to represent the `sc_time`.
+Due to the limits of the implementation of time, we can only use it to represent discrete time.
+Therefore, there is a minimum representable time quantum, called the **time resolution**, which can be get and set by the user.
+
+`sc_time` class constructor: `sc_time(double, sc_time_unit )`, where `sc_time_unit` is an enumerated type defined different time units which are listed bellow:
+- SC_FS femtosecond
+- SC_PS picosecond
+- SC_NS nanosecond
+- SC_US microsecond
+- SC_MS millisecond
+- SC_SEC second
+
+For example, `sc_time t(50, SC_NS)` creates an `sc_time` variable representing 50 nanoseconds.
+And the simulation time resolution can be get and set through the following functions:
+- `sc_time sc_get_time_resolution()`
+- `void sc_set_time_resolution(double, sc_time_unit)`
+
+The function `sc_time_stamp()` returns the current simulation time.
+During elaboration and initialization stage, this function shall return a value of zero.
+Constant `SC_ZERO_TIME` represents a time value of zero.
+It is a good practice to use this constant whenever writing a time value of zero.
+
+The reaction time and signal propagation time in the real world are modeled by the time delay in the simulated time.
+The `wait()` method provides a syntax to allow this delay in `SC_THREAD()` process.
+When a `wait()` is invoked, the `SC_THREAD` process blocks i tself and is resumed by the scheduler after the requested delay in simulated time.
+
+***Note that simulation time is very different from wall clock time!***.
+I.e. a call of `wait(60, SC_ SEC)` does not return control after 60 seconds of real, physical time.
+It returns control when **simulated time** is 60 seconds after the time when it was called.
+
+A routine to exemplify the usage of `sc_time()` and `wait()` is given in *Exercise_3*.
+Read and compile the source code, and run the obtained executable.
+Modify the module you have designed in the *Exercise_2*, to simulate a counter that starts to countdown from 20 to 1 with a countdown interval of 20ns.
+
+### Tip
+– To compile the code, open a terminal and change to the directory where the source file located. Then type `make` in the terminal.
+– After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
+– If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
 
 ## Exercise 4 - sc_event
+A SystemC event is the occurrence of an `sc_event` notification and happens at a single instant in time, which is used for synchronization.
+A process instance may be triggered or resumed on the occurrence of an event, that is, when the event is notified.
+
+To observe an event, the observer must be waiting for the event prior to its notification.
+Any number of observers can wait for an event, and all of them will be notified **in the same delta cycle**.
+
+A routine to illustrate the usage of `sc_event` and `wait(event_ name)` is given in *Exercise_4*.
+Read and compile the source code, and run the obtained executable.
+
+### Tip 1
+- `event_name.notify(void)`           // zero delta cycle event notification; *do not use!*
+- `event_name.notify(SC_ZERO_TIME)`   // next delta cycle event notification
+- `event_name.notify(sc_time)`        // time (time>0) delayed event notification
+- `event_name.notify(double, units)`  // time delayed event notification
+
+### Tip 2
+- `wait(event_name)`                  // waiting for event inside SC_THREAD
+
+### Tip 3
+– To compile the code, open a termi nal and change to the directory where the source file located. Then type `make` in the terminal.
+– After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the
+– If you want to delete all created files (including the executable itself), type `make clean` in the terminal.
 
 ## Exercise 5 - TicToc
 
+Using the knowledge that you gained in the previous exercises, try to implement a SystemC simulation to simulate a "network" composed of two nodes (which are represented by simulation processes).
+The nodes will perform something simple: one of the two nodes will wake up firstly from sleeping and keep awake for 10ns; afterwards, it invokes another node and goes to sleep again until being woken up by that waking node; and the two nodes will keep performing this procedure in turn.
+That is to say, the two nodes alternatively keep awake for a while and wake up the sleeping node before going to sleep.
+The node starts the communication is denoted as "tic" and the other is "toc", which are depicted in the Figure 1 bellow.
 
+<p align="center">
+  <img src="./fig/tic_toc.png" width="50%">
+</p>
 
+After the simulation, display on the terminal how many times each node has been awake (active) during the simulation.
+### Tip:
+- A `Makefile` has been provided in the folder *Exercise_5*, please store your code in that directory in order to compile and execute your simulation as the previous exercises.
