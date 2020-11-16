@@ -4,6 +4,15 @@ Tested with SystemC v2.3.3.
 
 In case of problems try to source the .bashrc file with the command `. ~/.bashrc`.
 
+If this error occurs:
+```
+./run.x: error while loading shared libraries: libsystemc-2.3.3.so: cannot open shared object file: No such file or directory
+```
+Enter the command:
+```
+export LD_LIBRARY_PATH=/usr/local/systemc-2.3.3/lib-linux64:$LD_LIBRARY_PATH
+```
+
 ## Exercise 1 - HelloWorld
 A SystemC module is a C++ class, it encapsulates a hardware or software description.
 SystemC defines that any module has to be derived from the existing class `sc_module`, and supplies a macro `SC_MODULE` to simplify the declaration process.
