@@ -12,8 +12,8 @@ void EX_sc_signal::tx_proc_thread(void) {
 
 	/* int, bool values can be received simultaneously */
 	wait(20, SC_NS);
-	sig_int.write(20);
-	cout << "tx_proc_thread writes value \"20\" to sig_int @ " << sc_time_stamp() << endl;
+	sig_int.write(30);
+	cout << "tx_proc_thread writes value \"30\" to sig_int @ " << sc_time_stamp() << endl;
 	sig_bool.write(true);
 	cout << "tx_proc_thread writes value \"true\" to sig_bool @ " << sc_time_stamp() << endl;
 

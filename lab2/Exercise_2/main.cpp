@@ -70,7 +70,7 @@ int sc_main(int argc, char* argv[]) {
   cout << "INFO: Adding 3 sc_ints to produce an sc_bigint" << endl;
   sc_int<64> g("0x7000000000000000");
   sc_int<64> h("0x7000000000000000");
-  sc_int<64> i("0x7000000000000000");
+  sc_int<64> i("0x1000000000000000");
   sc_bigint<70> bigsum;
   cout << "INFO: sc_int<3> g = " << g << endl;
   cout << "INFO: sc_int<5> h = " << h << endl;
@@ -81,9 +81,38 @@ int sc_main(int argc, char* argv[]) {
   bigsum = sc_bigint<70>(g) + h + i;
   cout << "INFO: g + h + i = bigsum = " << bigsum << " OK" << endl;
 
+/* ================================================================================== */
+  /*  sc_uint<w> & sc_biguint<w> */
+  cout << std::string(40,'-') << endl;
+
+  cout << "INFO: Adding 3 sc_uints to produce a bigger sc_uint" << endl;
+  sc_uint<3> j(3);
+  sc_uint<5> k(15);
+  sc_uint<5> l(14);
+  cout << "INFO: sc_uint<3> j = " << j << endl;
+  cout << "INFO: sc_uint<5> k = " << k << endl;
+  cout << "INFO: sc_uint<5> l = " << l << endl;
+  cout << "INFO: j + k + l = " << j + k + l << " OK" << endl;
+  sc_uint<7> usum = j + k + l;
+  cout << "INFO: j + k + l = usum = " << usum << " OK" << endl;
+
+  cout << std::string(40,'-') << endl;
+  cout << "INFO: Adding 3 sc_uints to produce an sc_biguint" << endl;
+  sc_uint<64> m("0x7000000000000000");
+  sc_uint<64> n("0x7000000000000000");
+  sc_uint<64> o("0x3000000000000000");
+  sc_biguint<70> bigusum;
+  cout << "INFO: sc_uint<3> m = " << m << endl;
+  cout << "INFO: sc_uint<5> n = " << n << endl;
+  cout << "INFO: sc_uint<5> o = " << o << endl;
+  cout << "INFO: m + n + o = " << m + n + o << " OOPS" << endl;
+  bigusum = m + n + o;
+  cout << "INFO: m + n + o = bigusum = " << bigusum << " OOPS" << endl;
+  bigusum = sc_biguint<70>(m) + n + o;
+  cout << "INFO: m + n + o = bigusum = " << bigusum << " OK" << endl;
+
   cout << std::string(40,'-') << endl;
   cout << "INFO: The end" << endl;
-
 
   return 0;
 }
