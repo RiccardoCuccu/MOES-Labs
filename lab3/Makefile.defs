@@ -1,5 +1,5 @@
 ## Variable that points to SystemC installation path
-SYSTEMC = /software/SystemC/systemc-2.2.0/
+SYSTEMC = /usr/local/systemc-2.3.3/
 ## edit this to gccsparcOS5 for solaris
 TARGET_ARCH = linux64
 
