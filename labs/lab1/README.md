@@ -17,12 +17,14 @@ export LD_LIBRARY_PATH=/usr/local/systemc-2.3.3/lib-linux64:$LD_LIBRARY_PATH
 A SystemC module is a C++ class, it encapsulates a hardware or software description.
 SystemC defines that any module has to be derived from the existing class `sc_module`, and supplies a macro `SC_MODULE` to simplify the declaration process.
 
-Inside the folder Exercise_1, there are two versions of HelloWorld realized by plain C++ and SystemC respectively, which simply print “Hello World !” on the console.
+Inside the folder Exercise_1, there are two versions of HelloWorld realized by plain C++ and SystemC respectively, which simply print "Hello World!" on the console.
 Read the comments on the source codes and compare the two versions. Finally compile the source code and run the obtained executable.
+
 ### Tip 1
 To compile the code, open a terminal and change to the directory where the source file located.
-- For C++ version, type `g++ HelloWorld.cpp main.cpp o run.x` in the terminal to compile the source code.
+- For C++ version, type `g++ HelloWorld.cpp main.cpp -o run.x` in the terminal to compile the source code.
 - For SystemC version, type `make` in the terminal to compile the source code.
+
 ### Tip 2
 After compilation, an executable file named *run.x* is created. To run the simulation, just type `./run.x` in the terminal.
 If you want to delete all created files (including the executable itself),
@@ -137,5 +139,6 @@ The node starts the communication is denoted as "tic" and the other is "toc", wh
 </p>
 
 After the simulation, display on the terminal how many times each node has been awake (active) during the simulation.
+
 ### Tip:
 - A `Makefile` has been provided in the folder *Exercise_5*, please store your code in that directory in order to compile and execute your simulation as the previous exercises.
