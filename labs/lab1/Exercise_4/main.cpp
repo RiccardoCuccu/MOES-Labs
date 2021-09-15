@@ -1,4 +1,3 @@
-#include "systemc.h"
 #include "EX_sc_event.h"
 
 int sc_main(int argc, char * argv[]) {

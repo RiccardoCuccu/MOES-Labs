@@ -13,6 +13,11 @@ Enter the command:
 export LD_LIBRARY_PATH=/usr/local/systemc-2.3.3/lib-linux64:$LD_LIBRARY_PATH
 ```
 
+If you want to remove the SystemC startup text enter the command:
+```
+export SYSTEMC_DISABLE_COPYRIGHT_MESSAGE=1
+```
+
 ## Exercise 1 - HelloWorld
 A SystemC module is a C++ class, it encapsulates a hardware or software description.
 SystemC defines that any module has to be derived from the existing class `sc_module`, and supplies a macro `SC_MODULE` to simplify the declaration process.

@@ -1,7 +1,4 @@
 #include "systemc.h"
-#include <string>
-using std::string;
-using namespace::sc_core;
 
 SC_MODULE(EX_sc_time) {
 

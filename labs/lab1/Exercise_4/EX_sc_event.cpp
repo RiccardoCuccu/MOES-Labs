@@ -27,16 +27,16 @@ void EX_sc_event::proc1_thread(void) {
 
 void EX_sc_event::proc2_thread(void) {
 	wait(evt2);		// 1st active when evt2 notified
-	cout << "1st active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << endl;
+	cout << "1st active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << "\n" << endl;
 
 	wait(evt2);		// 2nd active when evt2 notified
-	cout << "2nd active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << endl;
+	cout << "2nd active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << "\n" << endl;
 
 	wait(evt2);		// 3rd active when evt2 notified
-	cout << "3rd active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << endl;
+	cout << "3rd active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << "\n" << endl;
 
 	wait(evt2);		// 4th active when evt2 notified
-	cout << "4th active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << endl;
+	cout << "4th active, proc2 received evt2's notification from proc1 @ " << sc_time_stamp() << "\n" << endl;
 
 	wait(30, SC_NS);
 	evt1.notify(SC_ZERO_TIME);	// active proc1

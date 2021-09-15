@@ -1,9 +1,8 @@
-#include "systemc.h"
-#include "EX_sc_event.h"
+#include "EX_tictoc.h"
 
-int sc_main(int argc, char * argv[]) {
+int sc_main(int argc, char *argv[]) {
 	
-	EX_sc_event inst("instance");
+	EX_tictoc inst("tictoc");
 
 	sc_start();
 
