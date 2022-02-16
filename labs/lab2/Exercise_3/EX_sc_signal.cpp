@@ -1,5 +1,4 @@
 #include "EX_sc_signal.h"
-using namespace sc_core;
 
 void EX_sc_signal::tx_proc_thread(void) {
 	wait(20, SC_NS);
@@ -23,7 +22,6 @@ void EX_sc_signal::tx_proc_thread(void) {
 	cout << "tx_proc_thread writes value \"30\" to sig_int @ " << sc_time_stamp() << endl;
 	sig_bool.write(false);
 	cout << "tx_proc_thread writes value \"false\" to sig_bool @ " << sc_time_stamp() << endl;
-
 }
 
 void EX_sc_signal::rx_proc_method(void) {
@@ -34,4 +32,3 @@ void EX_sc_signal::rx_proc_method(void) {
 		cout << "rx_proc_method read value " << sig_bool.read() << " @ " << sc_time_stamp() << endl;
 	}
 }
-	

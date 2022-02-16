@@ -1,11 +1,11 @@
 #include "systemc.h"
-#include <iostream>
-using std::cout;
-using std::endl;
+//#include <iostream>
+//using std::cout;
+//using std::endl;
 
 SC_MODULE(Stim) {
-	sc_out<int>	out;	// declare an output port
-	sc_in<int>	in;	// declare an input port
+	sc_out<int> out;	// declare an output port
+	sc_in<int> in;		// declare an input port
 
 	SC_CTOR(Stim) {
 		SC_THREAD(gen_thread);

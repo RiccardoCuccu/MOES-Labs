@@ -10,5 +10,5 @@ void EX_sensitivity_list::ex_thread(void) {
 }
 
 void EX_sensitivity_list::ex_method(void) {
-	cout <<  "ex_method @ " << sc_time_stamp() << endl;
+	cout << "ex_method @ " << sc_time_stamp() << endl;
 }	
