@@ -73,7 +73,7 @@ SystemC uses a 64 bit unsigned integer to represent the `sc_time`.
 Due to the limits of the implementation of time, we can only use it to represent discrete time.
 Therefore, there is a minimum representable time quantum, called the **time resolution**, which can be get and set by the user.
 
-`sc_time` class constructor: `sc_time(double, sc_time_unit )`, where `sc_time_unit` is an enumerated type defined different time units which are listed bellow:
+`sc_time` class constructor: `sc_time(double, sc_time_unit)`, where `sc_time_unit` is an enumerated type defined different time units which are listed bellow:
 - SC_FS femtosecond
 - SC_PS picosecond
 - SC_NS nanosecond
@@ -93,7 +93,7 @@ It is a good practice to use this constant whenever writing a time value of zero
 
 The reaction time and signal propagation time in the real world are modeled by the time delay in the simulated time.
 The `wait()` method provides a syntax to allow this delay in `SC_THREAD()` process.
-When a `wait()` is invoked, the `SC_THREAD` process blocks i tself and is resumed by the scheduler after the requested delay in simulated time.
+When a `wait()` is invoked, the `SC_THREAD` process blocks itself and is resumed by the scheduler after the requested delay in simulated time.
 
 ***Note that simulation time is very different from wall clock time!***<br/>
 I.e. a call of `wait(60, SC_SEC)` does not return control after 60 seconds of real, physical time.

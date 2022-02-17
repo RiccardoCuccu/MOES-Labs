@@ -1,6 +1,6 @@
 #include "EX_sc_event.h"
 
-int sc_main(int argc, char * argv[]) {
+int sc_main(int argc, char *argv[]) {
 	
 	EX_sc_event inst("instance");
 
