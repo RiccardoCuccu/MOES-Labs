@@ -104,5 +104,5 @@ Then, display the simulation result on the console.
 - A *Makefile* has been provided in the folder *Exercise_5*, please store your code in that directory in order to compile and execute your simulation as the previous exercises.
 
 <p align="center">
-  <img src="./fig/1bit_adder.png" width="25%">
+  <img src="./fig/1bit_adder.png" width="75%">
 </p>
