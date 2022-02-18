@@ -49,13 +49,13 @@ Since the SystemC language is built on C++, all of the C++ data types are availa
 Also SystemC lets you define new data types for new hardware technology (i.e., multi-valued logic) or for applications other than electronic system designs.
 All of the SystemC data type are part of the `sc_dt` namespace, which may be used with the scope operator (`::`) to avoid naming collisions with other libraries.
 Some of these data types are listed below, more details could be referred in the Language Reference Manual (LRM). 
--	`sc_bv<width>` bit vector (2 values, 0 and 1)
+- `sc_bv<width>` bit vector (2 values, 0 and 1)
 - `sc_logic` logic bit (4 values, 0, 1, X and Z)
--	`sc_lv<width>` logic vector
--	`sc_int<width>` int type with specified width, from 1 to 64 bits
--	`sc_uint<width>` unsigned int type with specified width, from 1 to 64 bits
--	`sc_bigint<width>` support for the larger number than native C++ data types
--	`sc_biguint<width>`
+- `sc_lv<width>` logic vector
+- `sc_int<width>` int type with specified width, from 1 to 64 bits
+- `sc_uint<width>` unsigned int type with specified width, from 1 to 64 bits
+- `sc_bigint<width>` support for the larger number than native C++ data types
+- `sc_biguint<width>`
   
 Try to compile the example code in *Exercise_2*. 
 
@@ -68,12 +68,15 @@ Channel can be used for inter-module communication or for inter-process communic
 Interfaces provide a means of accessing channels.
 
 Here, we only introduce `sc_signal`.
-The syntax for declaring a SystemC sc_signal channel is: `sc_signal<T> sig_name;`
+The syntax for declaring a SystemC `sc_signal` channel is:
+```
+sc_signal<T> sig_name;
+```
 
 ### Tip
--	`T sig_name.read()` // read value from channel 
--	`void sig_name.write(T  new_value)` // write value to channel 
--	`const sc_event& value_changed_event()` // event to indicate the value changing inside    the channel 
+- `T sig_name.read()`				// read value from channel 
+- `void sig_name.write(T  new_value)`		// write value to channel 
+- `const sc_event& value_changed_event()`	// event to indicate the value changing inside the channel 
 
 Observe how the `sc_signal<T>` is used in the example code inside folder *Exercise_3*, compile and run the simulation. 
 
@@ -90,16 +93,16 @@ Connect the adder and the testbench to form a structure as depicted in the follo
 Then, display the simulation result on the console. 
 
 ### Tip 1: 
--	`sig_A`, `sig_B`, `sig_C` can be realized by three `sc_signal` channels. 
--	`sig_Cout`, `sig_Sum` can be realized by two `sc_signal` channels. 
--	`A` and `B` are the inputs of the 1bit-adder, `Cin` is the carry in bit of the 1bit-adder. 
--	`Sum` is the output of the 1bit-adder, `Cout` is the carry out bit of the 1bit-adder. 
--	`Sum` = `A` ⊕ `B` ⊕ `Cin` 
--	`Cout` = (`A` · `B`) ⊕ (`Cin` · (`A` ⊕ `B`))
+- `sig_A`, `sig_B`, `sig_C` can be realized by three `sc_signal` channels. 
+- `sig_Cout`, `sig_Sum` can be realized by two `sc_signal` channels. 
+- `A` and `B` are the inputs of the 1bit-adder, `Cin` is the carry in bit of the 1bit-adder. 
+- `Sum` is the output of the 1bit-adder, `Cout` is the carry out bit of the 1bit-adder. 
+- `Sum` = `A` ⊕ `B` ⊕ `Cin` 
+- `Cout` = (`A` · `B`) ⊕ (`Cin` · (`A` ⊕ `B`))
 
 ### Tip 2
--	A *Makefile* has been provided in the folder *Exercise_5*, please store your code in that directory in order to compile and execute your simulation as the previous exercises.
+- A *Makefile* has been provided in the folder *Exercise_5*, please store your code in that directory in order to compile and execute your simulation as the previous exercises.
 
-[//]: <p align="center">
-[//]:   <img src="./fig/1bit_adder.png" width="25%">
-[//]: </p>
+<p align="center">
+  <img src="./fig/1bit_adder.png" width="25%">
+</p>

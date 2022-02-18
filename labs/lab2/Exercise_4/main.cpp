@@ -6,8 +6,8 @@ int sc_main(int argc, char * argv[]) {
 	sc_signal<int> channel1;	// define a channel
 	sc_signal<int> channel2;
 
-	Stim Stim_inst("Stim Obj");
-	Proc Proc_inst("Proc Obj");
+	Stim Stim_inst("Stim_Obj");
+	Proc Proc_inst("Proc_Obj");
 
 	Stim_inst.out(channel1);	// connect Stim_inst's output port "out" to channel1
 	Stim_inst.in(channel2);		// connect Stim_inst's input port "in" to channel2

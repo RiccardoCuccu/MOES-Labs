@@ -34,7 +34,6 @@ int sc_main(int argc, char *argv[]) {
 	cout << "INFO:       flag is '" << flag      << "'" << endl;
 	cout << "INFO:        all is '" << all       << "'" << endl;
 
-
 	/* ================================================================================== */
 	/* native C++ data types */
 	cout << std::string(40,'-') << endl;
@@ -52,7 +51,7 @@ int sc_main(int argc, char *argv[]) {
 	cout << "INFO: a + b + c = csum = " << csum << " OK" << endl;
 
 	/* ================================================================================== */
-	/*  sc_int<w> & sc_bigint<w> */
+	/* sc_int<w> & sc_bigint<w> */
 	cout << std::string(40,'-') << endl;
 
 	cout << "INFO: Adding 3 sc_ints to produce a bigger sc_int" << endl;
@@ -81,8 +80,8 @@ int sc_main(int argc, char *argv[]) {
 	bigsum = sc_bigint<70>(g) + h + i;
 	cout << "INFO: g + h + i = bigsum = " << bigsum << " OK" << endl;
 
-/* ================================================================================== */
-	/*  sc_uint<w> & sc_biguint<w> */
+	/* ================================================================================== */
+	/* sc_uint<w> & sc_biguint<w> */
 	cout << std::string(40,'-') << endl;
 
 	cout << "INFO: Adding 3 sc_uints to produce a bigger sc_uint" << endl;
