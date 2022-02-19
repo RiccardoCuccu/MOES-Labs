@@ -2,22 +2,6 @@
 Laboratory 2 of the Modeling and Optimization of Embedded Systems course of the master degree in Embedded System (Electronic Engineering) of Politecnico di Torino, academic year 2020/2021.<br/>
 Tested with SystemC v2.3.3.
 
-In case of problems try to source the .bashrc file with the command `. ~/.bashrc`.
-
-If this error occurs:
-```
-./run.x: error while loading shared libraries: libsystemc-2.3.3.so: cannot open shared object file: No such file or directory
-```
-Enter the command:
-```
-export LD_LIBRARY_PATH=/usr/local/systemc-2.3.3/lib-linux64:$LD_LIBRARY_PATH
-```
-
-If you want to remove the SystemC startup text enter the command:
-```
-export SYSTEMC_DISABLE_COPYRIGHT_MESSAGE=1
-```
-
 ## Exercise 1 - SC_METHOD 
 `SC_METHOD` is one kind of SystemC simulation processes, like `SC_THREAD`, and behaves like a function.
 When called, it gets started and executed and returns execution back to the simulation kernel.
