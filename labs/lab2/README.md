@@ -92,7 +92,7 @@ Using the knowledge you obtained from the previous exercises, try to implement a
 Connect the adder and the testbench to form a structure as depicted in the following figure.
 Then, display the simulation result on the console. 
 
-### Tip 1: 
+### Tip 1
 - `sig_A`, `sig_B`, `sig_C` can be realized by three `sc_signal` channels. 
 - `sig_Cout`, `sig_Sum` can be realized by two `sc_signal` channels. 
 - `A` and `B` are the inputs of the 1bit-adder, `Cin` is the carry in bit of the 1bit-adder. 
