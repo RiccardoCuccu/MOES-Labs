@@ -24,12 +24,12 @@ SC_MODULE(signal_ex) {
 	};
 
 	// local data declarations
-	int 				count;
-	color				traffic_temp;
+	int 			count;
+	color			traffic_temp;
 
 	// local channels
-	sc_signal<int>			count_sig;
-	sc_signal<color>		traffic_sig;
+	sc_signal<int>		count_sig;
+	sc_signal<color>	traffic_sig;
 
 	SC_CTOR(signal_ex){
 		SC_THREAD(signal_ex_thread);
