@@ -3,9 +3,9 @@ Laboratory 3 of the Modeling and Optimization of Embedded Systems course of the 
 Tested with SystemC v2.3.3.
 
 ## Exercise 1 - Simulation cycle and advanced knowledge of sc_signal\<T\>
-[//]:<p align="center">
-[//]:  <img src="./fig/simulation_kernel.png" width="100%">
-[//]:</p>
+<p align="center">
+  <img src="./fig/simulation_kernel.png" width="100%">
+</p>
   
 The execution of the simulation kernel can be depicted as shown in Figure 1.
 1) *Elaborate*. During the elaboration stage, the modules and connections are established.
