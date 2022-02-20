@@ -2,22 +2,6 @@
 Laboratory 1 of the Modeling and Optimization of Embedded Systems course of the master degree in Embedded System (Electronic Engineering) of Politecnico di Torino, academic year 2020/2021.<br/>
 Tested with SystemC v2.3.3.
 
-In case of problems try to source the .bashrc file with the command `. ~/.bashrc`.
-
-If this error occurs:
-```
-./run.x: error while loading shared libraries: libsystemc-2.3.3.so: cannot open shared object file: No such file or directory
-```
-Enter the command:
-```
-export LD_LIBRARY_PATH=/usr/local/systemc-2.3.3/lib-linux64:$LD_LIBRARY_PATH
-```
-
-If you want to remove the SystemC startup text enter the command:
-```
-export SYSTEMC_DISABLE_COPYRIGHT_MESSAGE=1
-```
-
 ## Exercise 1 - HelloWorld
 A SystemC module is a C++ class, it encapsulates a hardware or software description.
 SystemC defines that any module has to be derived from the existing class `sc_module`, and supplies a macro `SC_MODULE` to simplify the declaration process.
@@ -141,6 +125,9 @@ The node starts the communication is denoted as "tic" and the other is "toc", wh
 
 <p align="center">
   <img src="./fig/tic_toc.png" width="25%">
+</p>
+<p align="center">
+  <em>Figure 1: tic and toc</em>
 </p>
 
 After the simulation, display on the terminal how many times each node has been awake (active) during the simulation.
