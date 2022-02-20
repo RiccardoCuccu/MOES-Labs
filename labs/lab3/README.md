@@ -4,7 +4,10 @@ Tested with SystemC v2.3.3.
 
 ## Exercise 1 - Simulation cycle and advanced knowledge of sc_signal\<T\>
 <p align="center">
-  <img src="./fig/simulation_kernel.png" width="100%">
+  <img src="./fig/simulation_kernel.png" width="75%">
+</p>
+<p align="center">
+  <em>Figure 1: SystemC simulation kernel</em>
 </p>
   
 The execution of the simulation kernel can be depicted as shown in Figure 1.
