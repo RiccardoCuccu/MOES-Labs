@@ -45,8 +45,9 @@ SC_MODULE(Testbench)
 		cout << std::endl;
 	}
 	
-	void CAR_CHECK() { 
-		cout << "@" << sc_time_stamp() << " car " << (car ? "arrives" : "leaves") << std::endl;
+	void CAR_CHECK() {
+		static const char *table[]= {"RED","YELLOW","GREEN"};
+		cout << "@" << sc_time_stamp() << " Car " << (car ? "arrives" : "leaves") << " with " << table[Secondary_road.read()] << std::endl;
 		cout << std::endl;
 	}
 
@@ -119,7 +120,6 @@ SC_MODULE(Testbench)
 			}
 		}
 	}
-
 };
 
 #endif

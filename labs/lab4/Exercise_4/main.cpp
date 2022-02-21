@@ -8,7 +8,7 @@ int sc_main (int argc, char * argv[])
 { 
 	sc_signal<bool> car("car");
 	sc_signal<color> M("Main"), S("Secondary");
-	sc_clock clk("clk",sc_time(1, SC_US));
+	sc_clock clk("clk", sc_time(1, SC_US));
 
 	TLC_SW TLC("Controller") ;
 	HW_DRIVERS hw_drivers("HW driver");
@@ -18,7 +18,7 @@ int sc_main (int argc, char * argv[])
 	hw_drivers.M(M);
 	hw_drivers.S(S);
 	hw_drivers.clk(clk);
-    
+
 	TLC.car(hw_drivers);
 	TLC.light(hw_drivers);
 	TLC.timer(hw_drivers);
