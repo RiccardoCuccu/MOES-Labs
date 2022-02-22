@@ -4,13 +4,13 @@
 #include "hw_drivers.h"
 #include "../Exercise_1/testbench.h"
 
-int sc_main (int argc, char * argv[])
+int sc_main (int argc, char *argv[])
 { 
 	sc_signal<bool> car("car");
 	sc_signal<color> M("Main"), S("Secondary");
 	sc_clock clk("clk", sc_time(1, SC_US));
 
-	TLC_SW TLC("Controller") ;
+	TLC_SW TLC("Controller");
 	HW_DRIVERS hw_drivers("HW driver");
 	Testbench TB("Testbench");
 	
@@ -24,7 +24,7 @@ int sc_main (int argc, char * argv[])
 	TLC.timer(hw_drivers);
 
 	TB.Main_road(M);
-	TB.Secondary_road(S) ;
+	TB.Secondary_road(S);
 	TB.car(car);
 
 	sc_start();

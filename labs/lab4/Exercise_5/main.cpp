@@ -7,16 +7,16 @@
 #include "timer_peripheral.h"
 #include "../Exercise_1/testbench.h"
 
-int sc_main (int argc, char * argv[])
-{ 
-	sc_clock clk("clk",sc_time(1, SC_US));
+int sc_main(int argc, char *argv[])
+{
+	sc_clock clk("clk", sc_time(1, SC_US));
 	sc_signal<bool> car("car");
 	sc_signal<color> M("Main"), S("Secondary");
 
-	TLC_SW TLC("Controller") ;
+	TLC_SW TLC("Controller");
 	BUS bus("Bus");
-	HW_DRIVERS hw_drivers("Car and light driver");
-	TIMER_DRIVER timer_driver("Timer driver");
+	HW_DRIVERS hw_drivers("Car_and_light_driver");
+	TIMER_DRIVER timer_driver("Timer_driver");
 	TIMER_PERIPHERAL timer("Timer");
 	Testbench TB("Testbench");
 	
@@ -30,14 +30,14 @@ int sc_main (int argc, char * argv[])
 	hw_drivers.M(M);
 	hw_drivers.S(S);
     
-	TLC.car(car_driver);
-	TLC.light(light_driver);
+	TLC.car(hw_drivers);
+	TLC.light(hw_drivers);
 	TLC.timer(timer_driver);
 
 	TB.Main_road(M);
-	TB.Secondary_road(S) ;
+	TB.Secondary_road(S);
 	TB.car(car);
 
 	sc_start();
-	return 0 ;
+	return 0;
 }
